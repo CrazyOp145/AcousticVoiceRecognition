@@ -1,6 +1,3 @@
-import numpy as np
-import tensorflow as tf
-import matplotlib.pyplot as plt
 import speech_recognition as sr
 import webbrowser as wb
 
@@ -14,7 +11,7 @@ with sr.Microphone() as source:
 
 if 'Hello' in r2.recognize_google(audio):
     r2 = sr.Recognizer()
-    url = ''
+    url = 'https://www.youtube.com/watch?v=sHeJgKBaiAI'
     with sr.Microphone() as source:
         print("What do you want fag?")
         audio = r2.listen(source)
