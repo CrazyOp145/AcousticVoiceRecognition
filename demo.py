@@ -19,6 +19,7 @@ if 'Hello' in r2.recognize_google(audio):
         print("What do you want fag?")
         audio = r2.listen(source)
 
+        # Exceptiion
         try:
             get = r2.recognize_google(audio)
             print(get)
