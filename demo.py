@@ -9,10 +9,10 @@ r2 = sr.Recognizer()
 r3 = sr.Recognizer()
 
 with sr.Microphone() as source:
-    print("Command: 'Hey Siri'")
+    print('Say: "Hello"')
     audio = r3.listen(source)
 
-if 'Hey Siri' in r2.recognize_google(audio):
+if 'Hello' in r2.recognize_google(audio):
     r2 = sr.Recognizer()
     url = ''
     with sr.Microphone() as source:
@@ -26,4 +26,5 @@ if 'Hey Siri' in r2.recognize_google(audio):
         except sr.UnknownValueError:
             print("ERROR, tf you sayyy?")
         except sr.RequestError as er:
-            print("ERROR")
+            print("ERROR".format(er))
+
