@@ -17,13 +17,20 @@ def SpeakText(command):
 with sr.Microphone() as source2:
 
     # Calibrating ambient noise
-    print("Calibrating npise threshold")
+    print("Calibrating noise threshold")
     r1.adjust_for_ambient_noise(source2, duration=2)
 
     print("Listening...")
     audioInput = r1.listen(source2)
+    
+    # Exception handling
+    try:
+        speechText = r1.recognize_google(audioInput)
+        print("You said: " + speechText)
 
-    speechText = r1.recognize_google(audioInput)
-    speechText = speechText.lower() # Text to speech converter 
+        SpeakText('Got your message')
 
-    print("You said: " + speechText)
+    except Exception as e:
+        print("Error: " + str(e))
+
+
